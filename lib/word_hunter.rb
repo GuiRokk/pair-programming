@@ -6,7 +6,7 @@ class WordHunter
 		comb.map do |word|
 			next unless words.include?(word.join)
 			word.join
-		end.compact
+		end.compact.uniq.sort.join(' ')
 	end
 
 	def self.reverse(array)
