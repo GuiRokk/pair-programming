@@ -1,18 +1,15 @@
 class WordHunter
 	def self.find(matrix, words)
-		inputs = words.split
-		comb = matrix + matrix.transpose + inverte(matrix) + inverte(matrix.transpose)
+		words = words.split
+		comb = matrix + matrix.transpose + reverse(matrix) + reverse(matrix.transpose)
 
 		comb.map do |word|
-			if inputs.include?(word.join)
-				word.join
-			end
+			next unless words.include?(word.join)
+			word.join
 		end.compact
 	end
 
-	def self.inverte(array)
-		array.map do |f|
-			f.reverse
-		end
+	def self.reverse(array)
+		array.map { |letter| letter.reverse }
 	end
 end

@@ -14,6 +14,6 @@ describe 'WordHunter' do
               ['J', 'U', 'S'],
               ['N', 'G', 'S']]
     words = 'BUG'
-    expect(WordHunter.find(matrix, words)).to contain_exactly('BUG')
+    expect(WordHunter.find(matrix, words)).to contain_exactly(words)
   end
 end
